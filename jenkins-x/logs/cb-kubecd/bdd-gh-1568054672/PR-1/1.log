@@ -45,34 +45,19 @@ upserted Pipeline cb-kubecd-bdd-gh-1568054672-pr-1
 created PipelineRun cb-kubecd-bdd-gh-1568054672-pr-1
 created PipelineStructure cb-kubecd-bdd-gh-1568054672-pr-1
 
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-credential-initializer-ljdfm[0m to start...
-
-
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-ljdfm[0m
 {"level":"warn","ts":1568054977.8160243,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
 {"level":"info","ts":1568054977.8169525,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-working-dir-initializer-d9rqw[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-d9rqw[0m
 {"level":"warn","ts":1568054978.7687354,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
 {"level":"info","ts":1568054978.7707257,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
 
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-place-tools[0m to start...
-
-
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-source-cb-kubecd-bdd-gh-1568054672-pr-gmgnv[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-gh-1568054672-pr-gmgnv[0m
 {"level":"warn","ts":1568055057.7687814,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
 {"level":"info","ts":1568055059.6928384,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-gh-1568054672.git @ master in path /workspace/source"}
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-git-merge[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
 Using SHAs from PULL_REFS=master:011a4939405749140ea33242c3167272cd0b556b,1:622cd3b24b5bad5f7839df6adbdcd14c801b6048
@@ -83,14 +68,8 @@ DEBUG: ran clean --force -d . in
 DEBUG: ran git merge 622cd3b24b5bad5f7839df6adbdcd14c801b6048 in 
 Merged SHA 622cd3b24b5bad5f7839df6adbdcd14c801b6048 with commit message 'My first PR commit' into base branch master
 
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-make-linux[0m to start...
-
-
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/bdd-gh-1568054672 main.go
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-build-container-build[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
 [36mINFO[0m[0000] No base image, nothing to extract            
@@ -112,14 +91,8 @@ Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [
 2019/09/09 18:51:18 pushed blob: sha256:b44584dc58346480e0fca18c6bb18e3e577e9bdae189b7f784ca898774f76317
 2019/09/09 18:51:20 gcr.io/jenkins-x-bdd2/bdd-gh-1568054672:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:c636e651c475e97c7a89aaf001bbf1cc8abd5d383d49699103470f5d1c5d7852 size: 428
 
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-postbuild-post-build[0m to start...
-
-
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
 no CVE provider running in the current ** namespace so skip adding image to be analysed
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-promote-make-preview[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
 sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
@@ -136,9 +109,6 @@ Successfully added Helm repository jenkins-x-chartmuseum.
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
 Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
 Successfully added Helm repository chartmuseum.jenkins-x.io.
-
-waiting for stage [32mfrom-build-pack[0m : container [32mstep-promote-jx-preview[0m to start...
-
 
 Showing logs for build [32mmeta-cb-kubecd-bdd-gh-156805467-2npck-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
 Creating a preview
